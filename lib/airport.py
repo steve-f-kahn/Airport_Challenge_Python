@@ -7,6 +7,9 @@ class Airport:
         self.weather = weather
 
     def landPlane(self, plane):
+
+        if len(self.hanger) >= self.capacity :
+            raise RuntimeError("Airport is full")
         if self.weather.storm :
             raise RuntimeError("Too stormy to land")
 

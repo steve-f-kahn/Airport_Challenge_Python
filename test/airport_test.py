@@ -40,6 +40,12 @@ class TestAirport(unittest.TestCase):
         airport = Airport(capacity=5)
         self.assertEqual(airport.capacity, 5)
 
-        
+    def test_airport_does_not_allow_plane_to_land_when_at_capacity(self):
+        airport = Airport()
+        airport.landPlane("Plane")
+        with self.assertRaises(RuntimeError):
+            airport.landPlane("Plane2")
+
+     
 if __name__ == '__main__':
     unittest.main()
