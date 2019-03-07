@@ -1,8 +1,11 @@
 import unittest
 import sys
 import os
-sys.path.append(os.getcwd())
-from lib.plane import *
+
+if sys.path.count(os.getcwd) == 0 :
+    sys.path.append(os.getcwd)
+
+from lib.plane import Plane
 
 class TestPlane(unittest.TestCase):
 
