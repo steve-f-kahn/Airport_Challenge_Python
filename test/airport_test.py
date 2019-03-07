@@ -32,6 +32,14 @@ class TestAirport(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             airport.takeOffPlane("Plane")
 
+    def test_airport_default_capacity(self):
+        airport = Airport()
+        self.assertEqual(airport.capacity, 1)
+
+    def test_airport_set_capacity(self):
+        airport = Airport(capacity=5)
+        self.assertEqual(airport.capacity, 5)
+
         
 if __name__ == '__main__':
     unittest.main()

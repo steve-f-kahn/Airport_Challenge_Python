@@ -1,7 +1,8 @@
 from weather import Weather
 
 class Airport:
-    def __init__(self, weather = Weather()):
+    def __init__(self, weather = Weather(), capacity = 1):
+        self.capacity = capacity
         self.hanger = []
         self.weather = weather
 
